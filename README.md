@@ -1,36 +1,140 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js Facebook Login for Businesses
+
+This project demonstrates how to integrate Facebook Login into a Next.js application, enabling users to authenticate with their Facebook credentials. This solution is ideal for businesses looking to offer a streamlined login process for their users.
+
+## Features
+
+- User session management
+- Environment variable configuration for secure storage of Facebook App credentials
+
+## Prerequisites
+
+- Node.js 12.0 or later
+- A Facebook Developer account
+- A Facebook App with Facebook Login enabled
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the Repository
+
+Start by cloning this repository to your local machine:
+
+```bash
+git clone https://github.com/yourusername/nextjs-facebook-login.git
+cd nextjs-facebook-login
+```
+
+### 2. Install Dependencies
+
+Install the project dependencies by running:
+
+```bash
+npm install
+```
+
+### 3. Configure Environment Variables
+
+Create a `.env.local` file in the root directory of your project, and add your Facebook App ID and Secret:
+
+```plaintext
+FACEBOOK_CLIENT_ID=YourFacebookAppId
+FACEBOOK_CLIENT_SECRET=YourFacebookAppSecret
+```
+
+### 4. Run the Development Server
+
+Start the development server with:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Source Docs
+https://developers.facebook.com/docs/facebook-login/facebook-login-for-business
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Supported Permissions
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+| Permission                      | User Access Tokens | Business Integration System User Access Tokens |
+| ------------------------------- | :----------------: | :--------------------------------------------: |
+| ads_management                  |         ✓          |                       ✓                        |
+| ads_read                        |         ✓          |                       ✓                        |
+| business_management             |         ✓          |                       ✓                        |
+| catalog_management              |         ✓          |                       ✓                        |
+| email *                         |         ✓          |                      N/A                       |
+| instagram_basic                 |         ✓          |                       ✓                        |
+| instagram_content_publish       |         ✓          |                       ✓                        |
+| instagram_manage_comments       |         ✓          |                       ✓                        |
+| instagram_manage_insights       |         ✓          |                       ✓                        |
+| instagram_manage_messages       |         ✓          |                       ✓                        |
+| instagram_shopping_tag_products |         ✓          |                       ✓                        |
+| leads_retrieval                 |         ✓          |                       ✓                        |
+| manage_fundraisers              |         ✓          |                       ✓                        |
+| pages_manage_cta                |         ✓          |                       ✓                        |
+| page_events                     |         ✓          |                       ✓                        |
+| pages_manage_ads                |         ✓          |                       ✓                        |
+| pages_manage_engagement         |         ✓          |                       ✓                        |
+| pages_manage_instant_articles   |         ✓          |                       ✓                        |
+| pages_manage_metadata           |         ✓          |                       ✓                        |
+| pages_manage_posts              |         ✓          |                       ✓                        |
+| pages_messaging                 |         ✓          |                       ✓                        |
+| pages_read_engagement           |         ✓          |                       ✓                        |
+| pages_read_user_content         |         ✓          |                       ✓                        |
+| pages_show_list                 |         ✓          |                       ✓                        |
+| private_computation_access      |         ✓          |                       ✓                        |
+| public_profile *                |         ✓          |                      N/A                       |
+| publish_video                   |         ✓          |                       ✓                        |
+| read_insights                   |         ✓          |                       ✓                        |
+| read_audience_network_insights  |         ✓          |                       ✓                        |
+| whatsapp_business_management    |         ✓          |                       ✓                        |
+| whatsapp_business_messaging     |         ✓          |                       ✓                        |
 
-## Learn More
+### Available Features
+- Ads Management Standard Access
+- Business Asset User Profile Access
+- Groups API
+- Instagram Public Content Access
+- Live Video API
+- Page Mentions
+- Page Public Content Access
+- Page Public Metadata Access
+- Human Agent
 
-To learn more about Next.js, take a look at the following resources:
+### Available Products
+- App Ads
+- App Events
+- App Links
+- Audience Network
+- Commerce
+- Conversions API for Business Messaging
+- Facebook Pixel
+- Facebook Extensions SDK
+- Fundraiser API
+- Groups API
+- Instagram Graph API (excludes Instagram Basic Display API)
+- Jobs
+- Pages API
+- Marketing API
+- Messenger
+- Meta Business Extension
+- Sharing
+- ThreatExchange
+- Web Payments
+- Webhooks
+- WhatsApp Business Platform
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Granular Business Integration System User Access Tokens
+![Granular Business Integration System User Access Tokens](https://scontent.fhyd2-3.fna.fbcdn.net/v/t39.8562-6/386159519_3497241837195333_7923978414227815875_n.png?stp=dst-webp&_nc_cat=100&ccb=1-7&_nc_sid=430b19&_nc_ohc=02ovU7YYfoEAX8SFPAc&_nc_ht=scontent.fhyd2-3.fna&oh=00_AfCwbuEpgMEKD2htb2ox1PFRpx43WOA0YVAFM91-9TrEWA&oe=65C6BE68)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Visit `http://localhost:3000` in your browser to see the application in action.
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+For deployment, ensure you update the Facebook App's valid OAuth redirect URIs to match your production domain. Also, set your environment variables in your production environment accordingly.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Contributing
+
+Contributions are welcome! Please feel free to submit a pull request or open an issue for any improvements or bug fixes.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
